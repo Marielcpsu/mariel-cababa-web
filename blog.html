@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Content</title>
+
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ff9dcf;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 7%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 5%;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        textarea{
+            padding-bottom: 100px;
+        }
+        button {
+            background-color: #000000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #000000;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #000000;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #ff9dcf;
+            color: #000000;
+            padding: 100px;
+            z-index: 10;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 10px;
+            border-top: solid 1px;
+        }
+
+        /* Additional styles for result container and clear button */
+        #result-container {
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+            border: 2px solid #000000;
+            padding: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #result-title {
+            color: #000000;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #result-content {
+            color: #000000;
+            font-size: 16px;
+        }
+
+        #clear-button {
+            background-color: #000000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            margin-top: 10px;
+        }
+
+        #clear-button:hover {
+            background-color: white;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-button">Back</a>
+    <h1 style="text-align: center; margin-top: 80px;">Create Content</h1>
+    <form id="content-form">
+        <label for="title">Enter Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="content">Enter Content:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+        <button type="button" onclick="publishContent()">Publish</button>
+    </form>
+
+    <div id="result-container">
+        <h2 id="result-title"></h2>
+        <p id="result-content"></p>
+        <button id="clear-button" onclick="clearContent()">Clear</button>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 20px; color: black;">&copy;Copyright by: Mariel Cababa. All rights reserved.</p>
+        <p style="text-align: center; font-size: 15px;">No. 09630887169</p>
+    </div>
+
+    <script>
+        function publishContent() {
+            var title = document.getElementById('title').value;
+            var content = document.getElementById('content').value;
+
+            // Display result
+            document.getElementById('result-title').innerText = title;
+            document.getElementById('result-content').innerText = content;
+            document.getElementById('result-container').style.display = 'block';
+            document.getElementById('clear-button').style.display = 'block';
+        }
+
+        function clearContent() {
+            // Clear form fields and hide result
+            document.getElementById('title').value = '';
+            document.getElementById('content').value = '';
+            document.getElementById('result-container').style.display = 'none';
+            document.getElementById('clear-button').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

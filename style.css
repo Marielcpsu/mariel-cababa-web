@@ -1,0 +1,354 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+
+}
+
+.container1 {
+    max-width: 600px;
+    margin-left: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: absolute;
+    backdrop-filter: blur(25px);
+    border: 3px solid #ff9dcf;
+    border-radius: 40px;
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.15)
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 10px 0;
+    color: #666;
+}
+
+.content {
+    margin-top: 80px;
+}
+
+
+
+.contanier {
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contanier::before {
+    content: '';
+    position: absolute;
+    height: 330%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: #ff9dcf;
+}
+
+.contanier .hero {
+    position: relative;
+    z-index: 10;
+    height: 85vh;
+    width: 75%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 3px solid #ff9dcf;
+    border-radius: 40px;
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.15);
+    padding: 0 40px 0 80px;
+}
+
+.hero nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+
+.hero nav .logo {
+    color: #801f82;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.hero nav .nav-links a {
+    color: #b94ab4;
+    margin-left: 40px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.hero nav .nav-links a:hover,
+.hero nav .nav-links a.active {
+    color: #801f82;
+}
+
+.hero .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.hero .content .div-text {
+    width: 50%;
+}
+
+.hero .content .div-text h1 {
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: #fff;
+}
+
+.hero .content .div-text h4 {
+    color: #c445a4;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.hero .content .div-text p {
+    color: #ffffff;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.hero .content .div-text .btn {
+    padding: 15px 20px;
+    background-color: #801f82;
+    border: 2px solid #801f82;
+    color: #fafafa;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero .content .div-text .btn:hover {
+    color: #a945bd;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.soc-link {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.soc-link a i {
+    font-size: 25px;
+    cursor: pointer;
+    color: #801f82;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.soc-link a i:hover {
+    color: #fff9f9;
+}
+
+.hero .content .div-img {
+    width: 45%;
+}
+
+.hero .content .div-img img {
+    width: 100%;
+}
+
+/* animation */
+
+.hero .logo,
+.hero .content .div-text h1,
+.hero .content .div-text h4,
+.hero .content .div-text .btn {
+    position: relative;
+    top: 50px;
+    animation: slide-top .5s linear forwards;
+    opacity: 0;
+}
+
+.hero .logo {
+    animation-delay: 0.2s;
+}
+
+.hero .content .div-text h1 {
+    animation-delay: 0.5s;
+}
+
+.hero .content .div-text h4 {
+    animation-delay: 0.9s;
+}
+
+.hero .content .div-text .btn {
+    animation-delay: 1.8s;
+}
+
+@keyframes slide-top {
+    0% {
+        top: 50px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-text p {
+    position: relative;
+    left: 100px;
+    animation: slide-right .5s linear forwards;
+    animation-delay: 1.3s;
+    opacity: 0;
+}
+
+@keyframes slide-right {
+    0% {
+        left: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.hero .content .div-img img {
+    opacity: 0;
+    margin-top: -50px;
+    margin-left: 20px;
+    border: solid 3px #ff9dcf;
+    border-radius: 3px;
+    transform: scale(0.8);
+    animation: fade-img .5s linear forwards;
+    animation-delay: 2.1s;
+}
+
+@keyframes fade-img {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f9f9f9 !important;
+}
+
+.col-12 {
+    z-index: 1;
+    color: white;
+}
+
+body .container3 {
+    max-width: 1100px;
+    position: relative;
+    margin-left: 200px;
+    z-index: 1;
+}
+
+#filter-buttons button {
+    border-radius: 3px;
+    background: #fff;
+    border-color: transparent;
+}
+
+#filter-buttons button:hover {
+    background: #801f82;
+}
+
+#filter-buttons button.active {
+    color: #fff;
+    background: #801f82;
+}
+
+#filterable-cards .card {
+    width: 15rem;
+    border: 2px solid transparent;
+}
+
+#filterable-cards .card.hide {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #filterable-cards {
+        justify-content: center;
+    }
+
+    #filterable-cards .card {
+        width: calc(100% / 2 - 10px);
+    }
+}
+
+.second {
+    background-color: #f9f9f9;
+}
+
+.footer {
+    background-color: #ff9dcf;
+    color: #000000;
+    padding: 100px;
+    z-index: 10;
+    text-align: center;
+    margin-top: 400px;
+    font-size: 10px;
+    border-top: solid 1px;
+}
+
+
+/* Define the keyframes for the fade-in-left animation */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply the animation to the card element */
+.fade-in-left {
+    animation: fadeInLeft 1s ease forwards;
+}
+
